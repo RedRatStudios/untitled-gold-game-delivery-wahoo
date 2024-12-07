@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbaortf8pdmhp"]
+[gd_scene load_steps=3 format=3 uid="uid://bbaortf8pdmhp"]
 
+[ext_resource type="Script" path="res://scenes/gold_nooget.gd" id="1_8natn"]
 [ext_resource type="Texture2D" uid="uid://cx67mssk2niui" path="res://assets/temp_graphics/nooget.png" id="1_asjh8"]
 
 [node name="GoldNooget" type="Node2D"]
+script = ExtResource("1_8natn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 texture_repeat = 1
 texture = ExtResource("1_asjh8")

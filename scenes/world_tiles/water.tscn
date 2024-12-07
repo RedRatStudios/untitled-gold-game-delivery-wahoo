@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c88phdfa0r8k4"]
+[gd_scene load_steps=4 format=3 uid="uid://cus53xovbg55g"]
 
 [sub_resource type="Gradient" id="Gradient_lg56r"]
-offsets = PackedFloat32Array(0, 0.651429, 1)
-colors = PackedColorArray(0.780367, 0.667605, 0.521409, 1, 0.133196, 0.133196, 0.133196, 1, 0.543666, 0.560586, 0.523284, 1)
+offsets = PackedFloat32Array(0, 0.137143, 0.405714, 0.754286, 1)
+colors = PackedColorArray(0.315957, 0.747882, 0.891784, 1, 0.13106, 0.36703, 0.562559, 1, 0.107767, 0.302083, 0.579972, 1, 0.0992113, 0.283762, 0.567158, 1, 0.288993, 0.692341, 0.843772, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j677m"]
-noise_type = 5
-frequency = 0.2681
+noise_type = 3
+frequency = 0.1146
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r6xbs"]
 width = 16

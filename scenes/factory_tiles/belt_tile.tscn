@@ -9,4 +9,5 @@ script = ExtResource("1_irkvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+rotation = -1.5708
 texture = ExtResource("2_ddi5t")
