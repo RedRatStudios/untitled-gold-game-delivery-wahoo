@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj0bhq1phdlkn"]
-
-[ext_resource type="Texture2D" uid="uid://c86wtgg3manc4" path="res://assets/temp_graphics/belt_tile.png" id="1_wgfm2"]
-
-[node name="BeltTile" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_wgfm2")

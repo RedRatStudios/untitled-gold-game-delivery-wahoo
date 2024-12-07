@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj0bhq1phdlkn"]
+
+[ext_resource type="Script" path="res://scripts/belt_script.gd" id="1_irkvd"]
+[ext_resource type="Texture2D" uid="uid://c86wtgg3manc4" path="res://assets/temp_graphics/belt_tile.png" id="2_ddi5t"]
+
+[node name="BeltTile" type="Node2D"]
+editor_description = "waw"
+script = ExtResource("1_irkvd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ddi5t")
