@@ -4,6 +4,7 @@ extends ItemProcessor
 const item_move_speed: float = 16.0;
 const position_threshold = 16;
 
+
 """
 
 So this is either a very stupid or very performance pilled approach.
@@ -17,6 +18,7 @@ We just check the position of the items and where they should go next.
 
 func _ready() -> void:
     super._ready()
+    max_items = 1;
 
 
 func _process(delta: float) -> void:

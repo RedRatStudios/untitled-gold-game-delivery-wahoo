@@ -22,5 +22,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+z_index = 2
+z_as_relative = false
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_7ubvr")

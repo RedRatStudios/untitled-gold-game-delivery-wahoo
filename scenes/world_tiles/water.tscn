@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cus53xovbg55g"]
+[gd_scene load_steps=5 format=3 uid="uid://cus53xovbg55g"]
 
 [sub_resource type="Gradient" id="Gradient_lg56r"]
 offsets = PackedFloat32Array(0, 0.137143, 0.405714, 0.754286, 1)
@@ -16,9 +16,17 @@ seamless_blend_skirt = 0.597
 color_ramp = SubResource("Gradient_lg56r")
 noise = SubResource("FastNoiseLite_j677m")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ntq"]
+size = Vector2(16, 16)
+
 [node name="Dirt" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 texture = SubResource("NoiseTexture2D_r6xbs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_x8ntq")

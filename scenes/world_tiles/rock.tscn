@@ -1,26 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://vni72e205j4t"]
+[gd_scene load_steps=5 format=3 uid="uid://vni72e205j4t"]
 
 [sub_resource type="Gradient" id="Gradient_npda7"]
-offsets = PackedFloat32Array(0, 0.0857143, 0.4, 0.54, 0.62, 0.725714, 0.86, 1)
-colors = PackedColorArray(0.133196, 0.133196, 0.133196, 1, 0.513176, 0.504502, 0.45472, 1, 0.155127, 0.154626, 0.151753, 1, 0.593737, 0.583225, 0.522887, 1, 0.196551, 0.195105, 0.186804, 1, 0.543666, 0.560586, 0.523284, 1, 0.281401, 0.284445, 0.269055, 1, 0.780367, 0.667605, 0.521409, 1)
+offsets = PackedFloat32Array(0, 0.145714, 0.562857, 0.754286, 0.785714, 0.871429, 0.9)
+colors = PackedColorArray(0.133196, 0.133196, 0.133196, 1, 0.513176, 0.504502, 0.45472, 1, 0.728101, 0.722172, 0.688142, 1, 0.378908, 0.373299, 0.341107, 1, 0.956249, 0.955117, 0.948619, 1, 0.553636, 0.544038, 0.488955, 1, 0.259856, 0.256965, 0.240371, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_yvaih"]
-noise_type = 3
-frequency = 0.0032
+noise_type = 5
+seed = 1
+frequency = 0.0384
+fractal_type = 2
 domain_warp_type = 1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r6xbs"]
 width = 16
 height = 32
 seamless = true
-seamless_blend_skirt = 0.557
+seamless_blend_skirt = 0.406
 color_ramp = SubResource("Gradient_npda7")
 noise = SubResource("FastNoiseLite_yvaih")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2tn8"]
+size = Vector2(16, 28)
+
 [node name="Dirt" type="Node2D"]
+position = Vector2(0, -8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 texture = SubResource("NoiseTexture2D_r6xbs")
-hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_m2tn8")
