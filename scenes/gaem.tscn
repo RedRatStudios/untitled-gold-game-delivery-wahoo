@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://dyc2gqwm3jkda"]
+[gd_scene load_steps=2 format=3 uid="uid://dyc2gqwm3jkda"]
+
+[ext_resource type="TileSet" uid="uid://bsv2hi5ay5w44" path="res://tileset.tres" id="1_le3m6"]
 
 [node name="gaem" type="Node2D"]
+
+[node name="WorldTilemap" type="TileMap" parent="."]
+format = 2
+
+[node name="PlayerTilemap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 8, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0)
+tile_set = ExtResource("1_le3m6")
+
+[node name="Camera2D" type="Camera2D" parent="."]

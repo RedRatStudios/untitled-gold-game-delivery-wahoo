@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://bsv2hi5ay5w44"]
+
+[ext_resource type="PackedScene" uid="uid://bj0bhq1phdlkn" path="res://scenes/tiles/belt_tile_south.tscn" id="1_qda33"]
+[ext_resource type="PackedScene" uid="uid://tqcfylfbxn8o" path="res://scenes/tiles/belt_tile_east.tscn" id="2_u0o8g"]
+[ext_resource type="PackedScene" uid="uid://qlwimtxlwp7d" path="res://scenes/tiles/belt_tile_north.tscn" id="3_dwwjs"]
+[ext_resource type="PackedScene" uid="uid://o017qrxpwvvh" path="res://scenes/tiles/belt_tile_west.tscn" id="4_ta37f"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_u64l6"]
+scenes/1/scene = ExtResource("1_qda33")
+scenes/6/scene = ExtResource("2_u0o8g")
+scenes/7/scene = ExtResource("3_dwwjs")
+scenes/8/scene = ExtResource("4_ta37f")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_u64l6")
