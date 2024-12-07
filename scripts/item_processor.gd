@@ -19,6 +19,7 @@ var max_items = 4;
 
 func _ready():
   all_processors.append(self)
+  update_destination()
 
 
 func _process(_delta: float):

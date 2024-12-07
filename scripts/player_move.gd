@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
+const SPEED = 5500.0
 
 
 func _physics_process(delta: float) -> void:
@@ -10,11 +10,11 @@ func _physics_process(delta: float) -> void:
     var dir_side := Input.get_axis("ui_left", "ui_right")
     var dir_up := Input.get_axis("ui_up", "ui_down")
     if dir_side:
-        velocity.x = dir_side * SPEED
+        velocity.x = dir_side * SPEED * delta;
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
     if dir_up:
-        velocity.y = dir_up * SPEED
+        velocity.y = dir_up * SPEED * delta;
     else:
         velocity.y = move_toward(velocity.y, 0, SPEED)
 
