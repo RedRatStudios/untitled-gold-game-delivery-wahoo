@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm2ipd7e1jmfo"]
+
+[ext_resource type="Script" path="res://scripts/drawing_agent.gd" id="1_wnv4e"]
+[ext_resource type="Texture2D" uid="uid://c86wtgg3manc4" path="res://assets/temp_graphics/belt_tile.png" id="2_e0cqg"]
+
+[sub_resource type="Shader" id="Shader_21osu"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+
+uniform vec2 player_pos = vec2(0, 0);
+uniform float max_distance = 75.0;
+uniform float num = 0;
+void fragment() {
+	if (COLOR.a!=0.0){
+		vec2 place = FRAGCOORD.xy;
+		float distance_to_player = distance(FRAGCOORD.xy, vec2(576,324));
+		COLOR.a = clamp(((distance_to_player-max_distance)/max_distance*5.0),0.3,1);
+	};
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpuu8"]
+shader = SubResource("Shader_21osu")
+shader_parameter/player_pos = Vector2(0, 0)
+shader_parameter/max_distance = 75.0
+shader_parameter/num = 0.0
+
+[node name="DrawingAgent" type="Node2D"]
+script = ExtResource("1_wnv4e")
+
+[node name="BeltGhost" type="Node2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="Sprite" type="Sprite2D" parent="BeltGhost"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_gpuu8")
+rotation = -1.5708
+texture = ExtResource("2_e0cqg")

@@ -1,31 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyc2gqwm3jkda"]
+[gd_scene load_steps=6 format=3 uid="uid://dyc2gqwm3jkda"]
 
 [ext_resource type="PackedScene" uid="uid://c8tx5jd8htfdx" path="res://levels/testlevel.tscn" id="1_tb4v4"]
 [ext_resource type="PackedScene" uid="uid://yepcannvyx7m" path="res://scenes/player.tscn" id="2_oo0iw"]
 [ext_resource type="PackedScene" uid="uid://bj0bhq1phdlkn" path="res://scenes/factory_tiles/belt_tile.tscn" id="3_gw2mi"]
 [ext_resource type="PackedScene" uid="uid://lw7wytln3jsx" path="res://scenes/factory_tiles/extractor_tile.tscn" id="5_3pxcv"]
+[ext_resource type="PackedScene" uid="uid://cm2ipd7e1jmfo" path="res://scenes/drawing_agent.tscn" id="5_rwarj"]
 
 [node name="gaem" type="Node2D"]
 
 [node name="testlevel" parent="." instance=ExtResource("1_tb4v4")]
-
-[node name="BeltTile" parent="." instance=ExtResource("3_gw2mi")]
-position = Vector2(-40, 24)
-rotation = -3.14159
-
-[node name="BeltTile2" parent="." instance=ExtResource("3_gw2mi")]
-position = Vector2(-56, 24)
-rotation = -3.14159
-
-[node name="BeltTile3" parent="." instance=ExtResource("3_gw2mi")]
-position = Vector2(-72, 24)
-rotation = -3.14159
-
-[node name="BeltTile4" parent="." instance=ExtResource("3_gw2mi")]
-position = Vector2(-88, 24)
-rotation = 1.5708
-
-[node name="ExtractorTile" parent="." instance=ExtResource("5_3pxcv")]
-position = Vector2(-32, 0)
+position = Vector2(-8, -8)
 
 [node name="Player" parent="." instance=ExtResource("2_oo0iw")]
+
+[node name="DrawingAgent" parent="." instance=ExtResource("5_rwarj")]
+
+[node name="BeltTile" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
+position = Vector2(-48, 16)
+rotation = -3.14159
+
+[node name="BeltTile2" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
+position = Vector2(-64, 16)
+rotation = -3.14159
+
+[node name="BeltTile3" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
+position = Vector2(-80, 16)
+rotation = -3.14159
+
+[node name="BeltTile4" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
+position = Vector2(-96, 16)
+rotation = 1.5708
+
+[node name="ExtractorTile" parent="DrawingAgent" instance=ExtResource("5_3pxcv")]
+position = Vector2(-40, -8)

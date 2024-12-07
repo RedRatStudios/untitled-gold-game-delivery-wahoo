@@ -11,6 +11,7 @@ radius = 1.0
 
 [node name="BeltTile" type="Node2D"]
 editor_description = "waw"
+position = Vector2(8, 8)
 script = ExtResource("1_irkvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,12 +20,16 @@ rotation = -1.5708
 texture = ExtResource("2_ddi5t")
 
 [node name="destination_collision" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="destination_collision"]
 shape = SubResource("RectangleShape2D_7l8ga")
 
 [node name="destination_point" type="RigidBody2D" parent="."]
 position = Vector2(16, 0)
+collision_layer = 256
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="destination_point"]
 shape = SubResource("CircleShape2D_onm46")
