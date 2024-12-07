@@ -22,18 +22,24 @@ func _ready():
 
 
 func _process(_delta: float):
+
+  # TODO CHECKS EVERY FRAME VERY BAD
+  # should only do this on tile placement or something
   update_destination()
 
 
-func update_destination():
+func update_destination(ip: ItemProcessor = null):
   """
-  check if there's an ItemProcessor at the destination point,
-  and set own destination to it
+  set destination to provided ItemProcessor or select one by brute force
   """
+  if ip:
+    destination = ip
+    return
+
   for p in all_processors:
     if p.destination_collision.overlaps_body(destination_point):
       destination = p;
-      break
+      return
 
 
 func add_item(item: Node2D) -> bool:

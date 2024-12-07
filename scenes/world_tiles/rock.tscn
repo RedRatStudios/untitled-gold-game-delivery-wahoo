@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://vni72e205j4t"]
+
+[sub_resource type="Gradient" id="Gradient_npda7"]
+offsets = PackedFloat32Array(0, 0.0857143, 0.4, 0.54, 0.62, 0.725714, 0.86, 1)
+colors = PackedColorArray(0.133196, 0.133196, 0.133196, 1, 0.513176, 0.504502, 0.45472, 1, 0.155127, 0.154626, 0.151753, 1, 0.593737, 0.583225, 0.522887, 1, 0.196551, 0.195105, 0.186804, 1, 0.543666, 0.560586, 0.523284, 1, 0.281401, 0.284445, 0.269055, 1, 0.780367, 0.667605, 0.521409, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yvaih"]
+noise_type = 3
+frequency = 0.0032
+domain_warp_type = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r6xbs"]
+width = 16
+height = 32
+seamless = true
+seamless_blend_skirt = 0.557
+color_ramp = SubResource("Gradient_npda7")
+noise = SubResource("FastNoiseLite_yvaih")
+
+[node name="Dirt" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = SubResource("NoiseTexture2D_r6xbs")
+hframes = 3
