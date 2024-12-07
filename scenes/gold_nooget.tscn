@@ -1,10 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbaortf8pdmhp"]
 
-[ext_resource type="Script" path="res://scenes/gold_nooget.gd" id="1_8natn"]
 [ext_resource type="Texture2D" uid="uid://cx67mssk2niui" path="res://assets/temp_graphics/nooget.png" id="1_asjh8"]
 
+[sub_resource type="GDScript" id="GDScript_6hbnl"]
+script/source = "class_name BeltItem
+extends ItemThing
+"
+
 [node name="GoldNooget" type="Node2D"]
-script = ExtResource("1_8natn")
+script = SubResource("GDScript_6hbnl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1

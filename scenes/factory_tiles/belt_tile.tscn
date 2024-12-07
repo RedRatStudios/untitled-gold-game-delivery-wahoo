@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj0bhq1phdlkn"]
+[gd_scene load_steps=5 format=3 uid="uid://bj0bhq1phdlkn"]
 
-[ext_resource type="Script" path="res://scripts/belt_script.gd" id="1_irkvd"]
+[ext_resource type="Script" path="res://scripts/belt_tile.gd" id="1_irkvd"]
 [ext_resource type="Texture2D" uid="uid://c86wtgg3manc4" path="res://assets/temp_graphics/belt_tile.png" id="2_ddi5t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l8ga"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onm46"]
+radius = 1.0
 
 [node name="BeltTile" type="Node2D"]
 editor_description = "waw"
@@ -11,3 +17,14 @@ script = ExtResource("1_irkvd")
 texture_filter = 1
 rotation = -1.5708
 texture = ExtResource("2_ddi5t")
+
+[node name="destination_collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="destination_collision"]
+shape = SubResource("RectangleShape2D_7l8ga")
+
+[node name="destination_point" type="RigidBody2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="destination_point"]
+shape = SubResource("CircleShape2D_onm46")
