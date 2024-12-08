@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyc2gqwm3jkda"]
+[gd_scene load_steps=4 format=3 uid="uid://dyc2gqwm3jkda"]
 
 [ext_resource type="PackedScene" uid="uid://c8tx5jd8htfdx" path="res://levels/testlevel.tscn" id="1_tb4v4"]
 [ext_resource type="PackedScene" uid="uid://yepcannvyx7m" path="res://scenes/player.tscn" id="2_oo0iw"]
-[ext_resource type="PackedScene" uid="uid://bj0bhq1phdlkn" path="res://scenes/factory_tiles/belt_tile.tscn" id="3_gw2mi"]
-[ext_resource type="PackedScene" uid="uid://bbaortf8pdmhp" path="res://scenes/gold_nooget.tscn" id="5_6vknb"]
 [ext_resource type="PackedScene" uid="uid://cm2ipd7e1jmfo" path="res://scenes/drawing_agent.tscn" id="5_rwarj"]
 
 [node name="gaem" type="Node2D"]
@@ -13,35 +11,3 @@
 [node name="Player" parent="." instance=ExtResource("2_oo0iw")]
 
 [node name="DrawingAgent" parent="." instance=ExtResource("5_rwarj")]
-
-[node name="BeltTile" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-40, 24)
-rotation = -3.14159
-
-[node name="BeltTile2" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-56, 24)
-rotation = -3.14159
-
-[node name="BeltTile3" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-72, 24)
-rotation = -3.14159
-
-[node name="BeltTile4" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-88, 24)
-rotation = 1.5708
-
-[node name="BeltTile5" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-88, 40)
-
-[node name="BeltTile6" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-72, 40)
-
-[node name="BeltTile7" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-56, 40)
-
-[node name="BeltTile8" parent="DrawingAgent" instance=ExtResource("3_gw2mi")]
-position = Vector2(-40, 40)
-rotation = -1.57079
-
-[node name="GoldNooget" parent="." instance=ExtResource("5_6vknb")]
-position = Vector2(-38, 41)

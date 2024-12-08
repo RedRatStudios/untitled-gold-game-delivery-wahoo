@@ -1,7 +1,7 @@
 class_name ItemProcessor
 extends Node2D
 
-var inventory: Array[Node2D];
+var inventory: Array[TransferableItem];
 
 """
 
