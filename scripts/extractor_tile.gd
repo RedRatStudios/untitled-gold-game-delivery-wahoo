@@ -16,5 +16,3 @@ func _on_extraction_timer_timeout():
 func extract_resource():
     var nooget = GOLD_NOOGET.instantiate();
     nooget.position -= nooget_offset;
-    if destination:
-      destination.add_item(nooget)

@@ -1,6 +1,8 @@
 class_name ItemProcessor
 extends Node2D
 
+var inventory: Array[Node2D];
+
 """
 
 default functionality for factory tiles that work with items
@@ -8,54 +10,23 @@ don't forget to call `super._ready/_process` in children
 
 """
 
-static var all_processors: Array[ItemProcessor];
-
-@onready var destination_collision: Area2D = $destination_collision
-@onready var destination_point: RigidBody2D = $destination_point
-
-var destination: ItemProcessor;
-var inventory: Array[ItemThing] = [];
-var max_items = 4;
-
 func _ready():
-  all_processors.append(self)
-  update_destination()
+    DrawingAgent.add_tile_to_grid(global_position, self)
 
 
 func _process(_delta: float):
-
-  # TODO CHECKS EVERY FRAME VERY BAD
-  # should only do this on tile placement or something
-  update_destination()
+    pass
 
 
-func update_destination(ip: ItemProcessor = null):
-  """
-  set destination to provided ItemProcessor or select one by brute force
-  """
-  if ip:
-    destination = ip
-    return
+func add_item(item: TransferableItem):
+    if item.transfer_lock == null:
+        item.transfer_lock = self;
+        inventory.append(item);
+    else:
+        item.transfer_future = self;
 
-  for p in all_processors:
-    if p.destination_collision.overlaps_body(destination_point):
-      destination = p;
-      return
-
-
-func add_item(item: Node2D) -> bool:
-    """
-    try to put item into an ItemProcessor
-    returns true if successful, false if not
-    """
-    if len(inventory) >= max_items:
-        return false
-
-    if item.get_parent():
-      item.get_parent().remove_child(item)
-    add_child(item);
-
-    item.position = Vector2(0, 0);
-    inventory.append(item);
-
-    return true
+func remove_item(item: TransferableItem):
+    var idx = inventory.find(item)
+    if idx >= 0:
+        inventory.remove_at(idx)
+    item.update_lock()
