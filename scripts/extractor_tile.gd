@@ -35,9 +35,8 @@ func _on_movement_collision_body_exited(body: Node2D) -> void:
 
 func extract_resource():
     var nooget = GOLD_NOOGET.instantiate();
-    nooget.global_position = extraction_point.position;
-    print(nooget.global_position)
-    add_item(nooget)
+    add_sibling(nooget)
+    nooget.global_position = extraction_point.global_position;
 
 func move_items_on_self(translation: Vector2):
     for item in inventory:
