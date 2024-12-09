@@ -1,7 +1,10 @@
 class_name ItemProcessor
 extends Node2D
 
+static var all_tile_types = Array();
 var inventory: Array[TransferableItem];
+var tile_size: Vector2i;
+var grid_pos: Vector2i;
 
 """
 
@@ -11,7 +14,7 @@ don't forget to call `super._ready/_process` in children
 """
 
 func _ready():
-    DrawingAgent.add_tile_to_grid(global_position, self)
+    pass
 
 
 func _process(_delta: float):

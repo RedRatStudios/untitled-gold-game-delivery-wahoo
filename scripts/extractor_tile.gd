@@ -8,8 +8,10 @@ const GOLD_NOOGET = preload("res://scenes/gold_nooget.tscn")
 const item_move_speed: float = 16.0;
 
 
+
 func _ready():
     super._ready()
+    tile_size = Vector2i(2, 2)
     extraction_timer.start()
 
 
@@ -34,9 +36,10 @@ func _on_movement_collision_body_exited(body: Node2D) -> void:
 func extract_resource():
     var nooget = GOLD_NOOGET.instantiate();
     nooget.global_position = extraction_point.position;
+    print(nooget.global_position)
     add_item(nooget)
 
 func move_items_on_self(translation: Vector2):
     for item in inventory:
-        if item.transfer_lock == self:
-            item.position += translation;
+        # if item.transfer_lock == self:
+        item.position += translation;
